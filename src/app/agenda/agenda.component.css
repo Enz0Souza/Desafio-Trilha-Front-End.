@@ -1,53 +1,77 @@
+/* Estilo do título */
 #titulo {
   display: flex;
   justify-content: center;
   margin-top: 3%;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
 }
 
+/* Formulário centralizado */
 #formbody {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
+/* Estilo da seção de agendamentos */
 #agendamentos {
   margin-top: 30px;
+  padding: 0 20px;
 }
 
+/* Estilo para mensagens de erro */
 .erro {
   color: red;
+  font-size: 14px;
 }
 
+/* Container principal */
 #container {
   position: relative;
   width: 25%;
   padding: 4%;
-  border-radius: 20%;
+  border-radius: 20px;
   margin: 1% auto 12.6% auto;
   background-color: #ff8411;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 
+/* Botão de agendar */
 #agenda {
   width: 32%;
   margin: 20px auto 0 auto;
   background-color: #007bff;
   color: white;
-  border-radius: 5px;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
   display: block;
+  transition: background-color 0.3s ease;
 }
 
-/* Responsividade para notebook */
+#agenda:hover {
+  background-color: #0056b3;
+}
+
+/* Responsividade para notebooks */
 @media (max-width: 1300px) {
   #container {
     width: 40%;
-    margin: 1% auto;
+    margin: 2% auto;
   }
 
   #agenda {
-    width: 40%;
+    width: 50%;
   }
 }
 
-/* Responsividade para celular */
+/* Responsividade para celulares */
 @media (max-width: 768px) {
   #container {
     width: 80%;
@@ -58,12 +82,12 @@
 
   #agenda {
     width: 100%;
-    padding: 10px;
+    padding: 14px;
     font-size: 16px;
   }
 
   #titulo {
-    font-size: 20px;
+    font-size: 22px;
     text-align: center;
     margin-top: 5%;
   }
