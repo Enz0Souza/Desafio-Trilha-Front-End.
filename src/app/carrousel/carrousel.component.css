@@ -1,5 +1,6 @@
 .carousel-container {
   position: relative;
+  width: 100%;
   max-width: 100%;
   overflow: hidden;
   margin: auto;
@@ -8,40 +9,73 @@
 .carousel-slide {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 50%;
-  height: 1%;
-  /* margin-left: 25%; */
+  width: 100%;
 }
 
 .carousel-image {
-  width: 150%;
-  height: 10%;
+  width: 80%;
+  height: auto;
   display: none;
-  margin-left: 28%;
+  margin: 0 auto;
   box-sizing: border-box;
   box-shadow: 2px 5px 5px black;
+  object-fit: cover;
+  max-height: 650px;
 }
 
 .carousel-image.active {
   display: block;
-  height: 10%;
 }
 
-.buttons{
+.buttons {
   position: absolute;
-  left: 10%;
-  top: 43%;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: black;
   color: white;
-  padding: 1%;
-  border-radius: 40%;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
 }
 
-.buttons:hover{
+.buttons:hover {
   background-color: rgb(61, 61, 61);
 }
 
-#avn{
+#avn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
   display: flex;
-  margin-left: 80%;
+  align-items: center;
+  z-index: 10;
+}
+
+/* Botão anterior*/
+#prev {
+  left: 10px;
+  position: absolute;
+}
+
+/* Responsivo para telas pequenas */
+@media (max-width: 768px) {
+  .buttons {
+    padding: 8px;
+  }
+
+  .carousel-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttons {
+    padding: 6px;
+  }
+
+  .carousel-image {
+    max-height: 200px;
+  }
 }
