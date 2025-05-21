@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   width: 68%;
-  max-width: 2000px;
+  max-width: 3000px;
   margin-left: 0%;
 }
 
@@ -52,7 +52,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 2000px;
+    max-width: 3000px;
   }
 
   .carousel-wrapper {

@@ -7,6 +7,7 @@
 }
 
 html,
+html,
 body {
   max-height: 100%;
   max-width: 100%;
@@ -409,3 +410,32 @@ body {
     margin-bottom: 5px;
   }
 }
+
+@media (max-height: 1370px) {
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  #pesquisa {
+    position: relative;
+    width: 30%;
+    margin: 10px auto;
+    height: 40px;
+    top: auto;
+    left: 0;
+    max-width: 600px;
+  }
+
+
+}
+
