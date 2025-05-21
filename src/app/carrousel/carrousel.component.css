@@ -1,0 +1,47 @@
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 50%;
+  height: 1%;
+  /* margin-left: 25%; */
+}
+
+.carousel-image {
+  width: 150%;
+  height: 10%;
+  display: none;
+  margin-left: 28%;
+  box-sizing: border-box;
+  box-shadow: 2px 5px 5px black;
+}
+
+.carousel-image.active {
+  display: block;
+  height: 10%;
+}
+
+.buttons{
+  position: absolute;
+  left: 10%;
+  top: 43%;
+  background-color: black;
+  color: white;
+  padding: 1%;
+  border-radius: 40%;
+}
+
+.buttons:hover{
+  background-color: rgb(61, 61, 61);
+}
+
+#avn{
+  display: flex;
+  margin-left: 80%;
+}

@@ -1,0 +1,10 @@
+<div class="carousel-container">
+  <button class="buttons" (click)="backSlide()"> < </button>
+  <button class="buttons" id="avn" (click)="nextSlide()"> > </button>
+  <div class="carousel-slide">
+    <img *ngFor="let image of images; let i = index"
+         [src]="image.src"
+         [class.active]="i === currentIndex"
+         class="carousel-image">
+  </div>
+</div>

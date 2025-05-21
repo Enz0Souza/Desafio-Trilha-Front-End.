@@ -1,0 +1,32 @@
+<div class="login-container">
+  <h2 class="form-title">Entrar na Conta</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Email</label>
+      <input
+        type="email"
+        class="form-control"
+        formControlName="email"
+        placeholder="Digite seu email"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Senha</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="senha"
+        placeholder="Digite sua senha"
+      />
+    </div>
+
+    <button type="submit" class="submit-btn">Entrar</button>
+    <br /><br />
+    <label for="register"
+      >Não tem uma conta?, <a href="register">Clique Aqui!</a> para se registrar</label
+    >
+
+  </form>
+</div>

@@ -1,0 +1,106 @@
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68%;
+  max-width: 2000px;
+  margin-left: 0%;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+}
+
+.card {
+  flex: 0 0 11rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+  height: 100px;
+  object-fit: cover;
+
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-button:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.card-title{
+  font-size: medium;
+}
+
+/*responsividade notebook*/
+@media (max-width: 1300px) {
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 2000px;
+  }
+
+  .carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .card {
+    flex: 0 0 11rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .card-img-top {
+    height: 100px;
+    object-fit: cover;
+
+  }
+
+  .nav-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .nav-button:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+
+  .card-title{
+    font-size: medium;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    max-width: 800px;
+    margin-left: 0%;
+  }
+}

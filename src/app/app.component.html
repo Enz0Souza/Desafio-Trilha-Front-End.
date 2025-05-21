@@ -1,0 +1,72 @@
+<header>
+  <nav>
+    <div id="agenda">
+      <a id="link" href="agendamento">
+        <i class="bi bi-calendar-event-fill"></i>
+      </a>
+      <p id="agendatext">Agende Agora</p>
+    </div>
+    <i id="icon" class="bi bi-cart-fill"></i>
+    <button id="headerbutton" (click)="ToggleNotification()"> <!--Fechar/abrir a notificação-->
+      <i class="bi bi-bell-fill"></i>
+    </button>
+    <div id="card" *ngIf="IsNotificationOpen">
+      <div id="card-header">
+        <div id="card-body">
+          <p>Nenhuma Notificação</p>
+        </div>
+      </div>
+    </div>
+    <a href="contato">
+      <i id="icon" class="bi bi-telephone-fill"></i>
+    </a>
+    <button id="headerbutton" (click)="ToggleUserCard()"><!--fechar ou abrir a aba de usuario-->
+      <i class="bi bi-person-circle"></i>
+      <span *ngIf="nomeUsuario" style="margin-left: 5px"></span>
+    </button>
+    <div id="card-user" *ngIf="IsUserOpen"><!--aparecer caso o usuario abra-->
+      <div id="card-header-user">
+        <h5>
+          Usuário:
+          <p>{{ nomeUsuario }}</p>
+          <a href="privacidade"> <p>Privacidade</p></a>
+
+        </h5>
+        <div id="card-body-user">
+          <ng-container *ngIf="!nomeUsuario; else logado">
+            <a href="register"><button id="btnlog-sign">Sign-in</button></a>
+            <a href="login"><button id="btnlog-sign">Log-in</button></a>
+          </ng-container>
+          <ng-template #logado>
+            <button id="logout" (click)="logout()">Logout</button>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div id="cabecalho">
+    <a href="home"> <img id="Logo" src="PetViva.png" /></a>
+    <form id="pesquisa" action="" method="GET">
+      <input id="inputsh" type="text" name="q" placeholder="Pesquisar" />
+      <button id="serach" type="submit"><i class="bi bi-search"></i></button>
+    </form>
+  </div>
+  <div><img id="decoracao" src="decoração (1).png" /></div>
+</header>
+<div id="category">
+  <a href=""><p>Cães</p></a>
+  <a href=""><p>Gatos</p></a>
+  <a href=""><p>Passaros</p></a>
+  <a href=""><p>Hamster</p></a>
+  <a href=""><p>Acessórios</p></a>
+  <a href=""><p>Produtos de Limpeza</p></a>
+  <a href=""><p>Decorações</p></a>
+  <a href=""><p>Promoções</p></a>
+</div>
+<br /><br />
+<div class="app-container">
+  <main class="content">
+    <router-outlet></router-outlet><!--conteudo da pagina-->
+  </main>
+  <app-footer></app-footer><!--footer-->
+</div>

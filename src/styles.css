@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  /* overflow-x: hidden; */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #ff8411;
+}
+
+#Logo {
+  position: relative;
+  left: 10%;
+  max-width: 10%;
+}
+
+#pesquisa {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  top: 10%;
+  left: 36%;
+  width: 30%;
+  height: 4%;
+}
+
+nav {
+  position: absolute;
+  left: 68%;
+  top: 10%;
+  display: flex;
+  align-items: center;
+  gap: 55px;
+  font-size: 1.5rem;
+}
+
+.bi {
+  cursor: pointer;
+}
+
+.bi:hover {
+  color: white;
+}
+
+#agenda {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 15%;
+}
+
+#agendatext {
+  margin: 1%;
+  font-size: small;
+}
+
+#link {
+  color: black;
+}
+
+#link:hover {
+  color: white;
+}
+
+#btnBusca {
+  float: left;
+  cursor: pointer;
+}
+
+.card-img-top {
+  width: 30%;
+  height: 20%;
+  align-self: center;
+}
+
+#headerbutton {
+  background-color: transparent;
+  border: none;
+}
+
+#card-header {
+  background-color: rgb(231, 229, 229);
+}
+#card-header-user {
+  background-color: rgb(231, 229, 229);
+}
+#inputsh {
+  width: 100%;
+}
+
+#card-body {
+  padding: 1%;
+  background-color: rgb(231, 229, 229);
+}
+#card-body-user {
+  padding: 1%;
+  background-color: rgb(231, 229, 229);
+}
+
+#card {
+  position: absolute;
+  right: 32%;
+  top: 100%;
+  width: 31%;
+  font-size: large;
+}
+#card-user {
+  position: absolute;
+  right: 0%;
+  top: 100%;
+  width: 40%;
+}
+
+#decoracao {
+  max-width: 100%;
+  height: 50%;
+  margin-top: -40%;
+}
+
+#icon {
+  color: #000000;
+}
+
+#icons:hover {
+  color: white;
+}
+
+/*responsividade notebook*/
+@media (max-width: 1300px) {
+  header {
+    background-color: #ff8411;
+  }
+
+  #Logo {
+    position: relative;
+    left: 12%;
+    width: 16%;
+    height: 10%;
+  }
+
+  #pesquisa {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    top: 10%;
+    left: 35%;
+    width: 30%;
+    height: 4%;
+  }
+
+  #inputsh {
+    width: 100%;
+  }
+
+  nav {
+    position: absolute;
+    left: 68%;
+    top: 10%;
+    display: flex;
+    align-items: center;
+    gap: 55px;
+    font-size: 1.5rem;
+  }
+
+  .bi {
+    cursor: pointer;
+  }
+
+  .bi:hover {
+    color: white;
+  }
+
+  #agenda {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 15%;
+  }
+
+  .card-img-top {
+    width: 30%;
+    height: 20%;
+    align-self: center;
+  }
+
+  #headerbutton {
+    background-color: transparent;
+    border: none;
+  }
+
+  #decoracao {
+    max-width: 100%;
+    height: 50%;
+    margin-top: -40%;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 824px) {
+  html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+  nav {
+    left: 72%;
+    gap: 25%;
+    font-size: 1.1rem;
+    flex-wrap: wrap;
+  }
+}
+/* Responsividade para celulares */
+@media (max-width: 824px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+  }
+
+  #Logo {
+    width: 6500px;
+    margin: 10px auto;
+    position: static;
+  }
+
+  #pesquisa {
+    position: relative;
+    width: 90%;
+    margin: 10px auto;
+    height: 40px;
+    left: auto;
+    top: auto;
+  }
+
+  #inputsh {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 16px;
+  }
+
+  nav {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+    width: 100%;
+    left: auto;
+    top: auto;
+  }
+
+  #agenda {
+    flex-direction: row;
+    width: auto;
+    font-size: 14px;
+  }
+
+  .content-section {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .product-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .product-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-price {
+    color: #ff8411;
+    font-weight: bold;
+    margin: 5px 0;
+    font-size: 18px;
+  }
+
+  .discount-badge {
+    background: #ff0000;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  footer {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f5f5f5;
+    text-align: center;
+  }
+}

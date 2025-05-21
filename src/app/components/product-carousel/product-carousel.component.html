@@ -1,0 +1,17 @@
+<div class="carousel-container">
+  <button (click)="prev()" class="nav-button left" [disabled]="currentIndex === 0">&#10094;</button>
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+      <div class="card" *ngFor="let product of visibleProducts">
+        <img class="card-img-top" [src]="product.image" alt="{{ product.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.price }}</p>
+          <a href="#" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button (click)="next()" class="nav-button right" [disabled]="currentIndex + visibleItems >= products.length">&#10095;</button>
+</div>

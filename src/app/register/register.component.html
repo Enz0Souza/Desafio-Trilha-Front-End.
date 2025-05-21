@@ -1,0 +1,82 @@
+<div class="register-container">
+  <h2 class="form-title">Criar Conta</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Email</label>
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          placeholder="Digite seu email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label>Senha</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="senha"
+          placeholder="Digite sua senha"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Endereço</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="endereco"
+        placeholder="Rua Exemplo, 123"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Complemento</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="complemento"
+        placeholder="Apartamento, casa..."
+        required
+      />
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Cidade</label>
+        <input type="text" class="form-control" formControlName="cidade"  required/>
+      </div>
+      <div class="form-group">
+        <label>Estado</label>
+        <input type="text" class="form-control" formControlName="estado" required />
+      </div>
+      <div class="form-group">
+        <label>CEP</label>
+        <input type="text" class="form-control" formControlName="cep" required />
+      </div>
+    </div>
+
+    <div class="form-check-group">
+      <label>
+        <input type="checkbox" formControlName="receberPromocoes" />
+        Desejo receber promoções por email.
+      </label>
+    </div>
+
+    <div class="form-check-group">
+      <label>
+        <input type="checkbox" formControlName="aceitarTermos" />
+        Concordo com os
+        <a href="termos-condições" target="_blank">Termos e Condições</a>.
+      </label>
+    </div>
+
+    <button type="submit" class="submit-btn">Registrar</button>
+  </form>
+</div>

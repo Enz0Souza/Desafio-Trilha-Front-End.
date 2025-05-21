@@ -1,0 +1,31 @@
+h3{
+  margin: 1%;
+}
+
+.card{
+  display: inline-block;
+  margin: 0.5%;
+}
+
+.card-img-top{
+   margin-left: 35%;
+}
+
+#horizontal-line {
+  width: 100%;
+  max-width: 2263px;
+  height: 1px;
+  background-color: silver;
+  margin: 0 auto;
+}
+
+
+  #produtos{
+    margin: 1%;
+  }
+
+
+/* Responsividade para celulares */
+@media (max-width: 768px) {
+ 
+}

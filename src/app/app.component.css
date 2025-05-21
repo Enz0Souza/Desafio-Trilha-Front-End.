@@ -1,0 +1,72 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+#category{
+  background-color: rgb(233, 229, 229);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: relative;
+  a{
+    position: relative;
+    left: 32%;
+    margin-top: 1%;
+    color: black;
+    text-decoration: none;
+  }
+  a:hover{
+    color: rgb(121, 120, 120);
+  }
+}
+
+
+
+/*responsividade notebook*/
+@media (max-width: 1300px) {
+  #category{
+    background-color: rgb(233, 229, 229);
+    display: none;
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+    a{
+      position: relative;
+      left: 24%;
+      margin-top: 1%;
+      color: black;
+      text-decoration: none;
+    }
+    a:hover{
+      color: rgb(121, 120, 120);
+    }
+  }
+}
+
+
+/* Responsividade para celulares */
+@media (max-width: 768px) {
+  #inputsh{
+    width: 40%;
+  }
+
+  #serach{
+    margin-right: 30%;
+  }
+
+
+}
+
+
