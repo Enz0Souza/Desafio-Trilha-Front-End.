@@ -2,7 +2,7 @@ Este projeto foi gerado usando o [Angular CLI](https://github.com/angular/angula
 
 ## Servidor de desenvolvimento
 
-Para iniciar um servidor de desenvolvimento local, execute:
+Para iniciar um servidor de desenvolvimento local, execute os comandos:
 
 ```bash
 ng serve
