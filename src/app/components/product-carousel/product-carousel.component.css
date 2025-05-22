@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   width: 68%;
-  max-width: 2000px;
+  max-width: 3000px;
   margin-left: 0%;
 }
 
@@ -52,7 +52,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 2000px;
+    max-width: 3000px;
   }
 
   .carousel-wrapper {
@@ -99,8 +99,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70%;
-    max-width: 800px;
-    margin-left: 0%;
+    width: 100%;
+    max-width: 850px;
+  }
+
+   .card {
+    flex: 0 0 10rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   }
 }
