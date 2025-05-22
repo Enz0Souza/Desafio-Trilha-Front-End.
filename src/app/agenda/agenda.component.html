@@ -14,7 +14,13 @@
       <option value="tosa">Tosa</option>
       <option value="banho_tosa">Banho & Tosa</option>
     </select>
-
+    <label for="pet">Qual o seu pet?</label>
+   <select name="pets" id="pets">
+    <option value="">Cachorro</option>
+    <option value="">Gato</option>
+    <option value="">Passaro</option>
+    <option value="">:::</option>
+   </select>
     <button id="agenda" (click)="agendar()">Agendar</button>
 
     <p id="erro-msg" *ngIf="erroMsg" style="color: red;">{{ erroMsg }}</p>
@@ -23,7 +29,7 @@
       <h3>Agendamentos:</h3>
       <ul id="lista-agendamentos">
         <li *ngFor="let agendamento of agendamentos">
-          {{ agendamento.data }} às {{ agendamento.hora }} - {{ agendamento.servico | titlecase }}
+          {{ agendamento.data }} às {{ agendamento.hora }} Serviço Solicitado: {{ agendamento.servico | titlecase }}
         </li>
       </ul>
     </div>
