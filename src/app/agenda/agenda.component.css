@@ -1,21 +1,24 @@
+main {
+  background-image: url("/public/imagem-fundo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+
 #titulo {
   display: flex;
   justify-content: center;
-  margin-top: 3%;
   font-size: 28px;
   font-weight: bold;
   color: #333;
 }
 
-#formbody {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
 #agendamentos {
   margin-top: 30px;
-  padding: 0 20px;
+  padding: 5px 20px;
 }
 
 .erro {
@@ -23,12 +26,18 @@
   font-size: 14px;
 }
 
+label {
+  margin-top: 2%;
+  padding: 1%;
+  font-weight: bold;
+}
+
 #container {
   position: relative;
   width: 25%;
+  display: grid;
   padding: 4%;
   border-radius: 20px;
-  margin: 1% auto 12.6% auto;
   background-color: #ff8411;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -39,7 +48,7 @@
   background-color: #007bff;
   border: none;
   border-radius: 8px;
-  padding: 12px;
+  padding: 14px;
   cursor: pointer;
   font-size: 16px;
   text-align: center;

@@ -7,6 +7,7 @@ import { CopyrightComponent } from './copyright/copyright.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './auth.guard';
 import { TermosCondicoesComponent } from './termos-condicoes/termos-condicoes.component';
+import { DashbordComponent } from './dashbord/dashbord.component';
 
 
 export const routes: Routes = [
@@ -43,4 +44,6 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
 
   { path: 'termos-condições', component: TermosCondicoesComponent },
+
+  { path: 'dashboard', component: DashbordComponent },
 ];

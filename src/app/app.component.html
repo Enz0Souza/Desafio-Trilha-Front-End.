@@ -1,4 +1,5 @@
 <header>
+  <div id="menu-pc">
   <nav>
     <div id="agenda">
       <a id="link" href="agendamento">
@@ -6,8 +7,12 @@
       </a>
       <p id="agendatext">Agende Agora</p>
     </div>
-    <i id="icon" class="bi bi-cart-fill"></i>
-    <button id="headerbutton" (click)="ToggleNotification()"> <!--Fechar/abrir a notificação-->
+    <button id="headerbutton">
+      <i id="icon" class="bi bi-cart-fill"></i>
+    </button>
+
+    <button id="headerbutton" (click)="ToggleNotification()">
+      <!--Fechar/abrir a notificação-->
       <i class="bi bi-bell-fill"></i>
     </button>
     <div id="card" *ngIf="IsNotificationOpen">
@@ -20,17 +25,18 @@
     <a href="contato">
       <i id="icon" class="bi bi-telephone-fill"></i>
     </a>
-    <button id="headerbutton" (click)="ToggleUserCard()"><!--fechar ou abrir a aba de usuario-->
+    <button id="headerbutton" (click)="ToggleUserCard()">
+      <!--fechar ou abrir a aba de usuario-->
       <i class="bi bi-person-circle"></i>
       <span *ngIf="nomeUsuario" style="margin-left: 5px"></span>
     </button>
-    <div id="card-user" *ngIf="IsUserOpen"><!--aparecer caso o usuario abra-->
+    <div id="card-user" *ngIf="IsUserOpen">
+      <!--aparecer caso o usuario abra-->
       <div id="card-header-user">
         <h5>
           Usuário:
           <p>{{ nomeUsuario }}</p>
           <a href="privacidade"> <p>Privacidade</p></a>
-
         </h5>
         <div id="card-body-user">
           <ng-container *ngIf="!nomeUsuario; else logado">
@@ -52,6 +58,7 @@
     </form>
   </div>
   <div><img id="decoracao" src="decoração (1).png" /></div>
+  </div>
 </header>
 <div id="category">
   <a href=""><p>Cães</p></a>
@@ -66,7 +73,9 @@
 <br /><br />
 <div class="app-container">
   <main class="content">
-    <router-outlet></router-outlet><!--conteudo da pagina-->
+    <router-outlet></router-outlet
+    ><!--conteudo da pagina-->
   </main>
-  <app-footer></app-footer><!--footer-->
+  <app-footer></app-footer
+  ><!--footer-->
 </div>
