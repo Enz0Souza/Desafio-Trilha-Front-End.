@@ -1,10 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
-declare function agendar(): void;
-
-
+import { AgendamentoService } from '../services/agenda.service';
 
 @Component({
   selector: 'app-agenda',
@@ -13,11 +10,50 @@ declare function agendar(): void;
   templateUrl: './agenda.component.html',
   styleUrls: ['./agenda.component.css']
 })
-export class AgendaComponent implements OnInit {
+export class AgendaComponent {
+  data = '';
+  hora = '';
+  servico = '';
+  especie = '';
+  msg = '';
+  loading = false;
 
-  ngOnInit() {
-    agendar()
+  constructor(private agendamentoService: AgendamentoService) {}
+
+  agendar() {
+    if (!this.data || !this.hora || !this.servico || !this.especie) {
+      this.msg = 'Preencha todos os campos!';
+      return;
+    }
+
+    this.loading = true;
+    this.msg = '';
+
+    const agendamento = {
+      data: this.data,
+      hora: this.hora,
+      especie: this.especie,
+      servico: this.servico
+    };
+
+    this.agendamentoService.criarAgendamento(agendamento).subscribe({
+      next: (res) => {
+        this.msg = 'Agendamento feito com sucesso!';
+        this.resetForm();
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error('Erro ao agendar:', err);
+        this.msg = 'Erro ao fazer agendamento. Tente novamente.';
+        this.loading = false;
+      }
+    });
   }
 
-
+  private resetForm() {
+    this.data = '';
+    this.hora = '';
+    this.servico = '';
+    this.especie = '';
+  }
 }

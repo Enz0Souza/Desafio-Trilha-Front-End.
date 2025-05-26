@@ -1,45 +1,41 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { UserService } from '../services/user.service';
-
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
+  imports: [FormsModule,ReactiveFormsModule],
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  erro: string = '';
 
-  constructor(
-    private fb: FormBuilder,
-    private userService: UserService,
-    private router: Router
-  ) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
-      email: [''],
-      senha: [''],
+      email: ['', [Validators.required]],
+      senha: ['', [Validators.required]],
     });
   }
 
   onSubmit() {
-    const usuario = this.userService.login(
-      this.loginForm.value.email,
-      this.loginForm.value.senha
-    );
-
-    if (!usuario) {
-      alert('Email ou senha inválidos');
+    if (this.loginForm.invalid) {
+      this.erro = 'Preencha todos os campos.';
       return;
     }
 
-    alert('Login realizado com sucesso!');
-    localStorage.setItem('usuarioLogado', 'true');
-    localStorage.setItem('user', JSON.stringify(usuario));
-    this.router.navigate(['/home']);
+    const { email, senha } = this.loginForm.value;
+
+    if (email.toLowerCase() === 'admin' && senha === '123456') {
+      localStorage.setItem(
+        'user',
+        JSON.stringify({ email: 'admin', senha: '123456', nome: 'Administrador' })
+      );
+      this.router.navigate(['/dashboard']);
+    } else {
+      localStorage.setItem('user', JSON.stringify({ email, senha }));
+      this.router.navigate(['/home']);
+    }
   }
 }

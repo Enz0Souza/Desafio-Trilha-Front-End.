@@ -1,1 +1,60 @@
-<p>dashbord works!</p>
+<main>
+<div class="dashboard-container">
+  <h2>Agendamentos</h2>
+
+  <div class="debug-info" *ngIf="msg">
+    <p>{{msg}}</p>
+  </div>
+
+  <div class="controls">
+    <label for="dataSelecionada">Selecione a data:</label>
+    <input type="date" id="dataSelecionada"
+           [(ngModel)]="diaSelecionado"
+           (change)="onDiaChange($event)">
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <p>Carregando agendamentos...</p>
+  </div>
+
+  <div class="sections-container">
+    <div class="agendamentos-section">
+      <h3>Agendamentos do Dia ({{formatarData(diaSelecionado)}})</h3>
+
+      <div *ngIf="!loading && agendamentosDoDia.length === 0" class="empty-message">
+        Nenhum agendamento para este dia
+      </div>
+
+      <ul *ngIf="agendamentosDoDia.length > 0">
+        <li *ngFor="let ag of agendamentosDoDia" class="agendamento-item">
+          <span class="hora">{{formatarHora(ag.hora)}}</span>
+          <span class="especie">{{ag.especie}}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="agendamentos-section">
+      <h3>Agendamentos da Semana</h3>
+
+      <div *ngIf="!loading && agendamentosDaSemana.length === 0" class="empty-message">
+        Nenhum agendamento para esta semana
+      </div>
+
+      <ul *ngIf="agendamentosDaSemana.length > 0">
+        <li *ngFor="let ag of agendamentosDaSemana" class="agendamento-item">
+          <span class="data">{{formatarData(ag.data)}}</span>
+          <span class="hora">{{formatarHora(ag.hora)}}</span>
+          <span class="especie">{{ag.especie}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div>
+  Administrador:
+  <a href="produtos"><button>produtos</button></a>
+</div>
+</main>
+

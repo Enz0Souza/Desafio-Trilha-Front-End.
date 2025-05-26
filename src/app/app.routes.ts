@@ -8,7 +8,8 @@ import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './auth.guard';
 import { TermosCondicoesComponent } from './termos-condicoes/termos-condicoes.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
-
+import { AdminGuard } from './guards/admin.guard';
+import { ProdutosComponent } from './produtos/produtos.component';
 
 export const routes: Routes = [
   {
@@ -45,5 +46,15 @@ export const routes: Routes = [
 
   { path: 'termos-condições', component: TermosCondicoesComponent },
 
-  { path: 'dashboard', component: DashbordComponent },
+  {
+    path: 'dashboard',
+    component: DashbordComponent,
+    canActivate: [AdminGuard],
+  },
+
+  {
+    path: 'produtos',
+    component: ProdutosComponent,
+    canActivate: [AdminGuard],
+  },
 ];

@@ -1,0 +1,96 @@
+.dashboard-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.debug-info {
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-left: 4px solid #17a2b8;
+  margin-bottom: 20px;
+  color: #0c5460;
+}
+
+.controls {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controls label {
+  font-weight: bold;
+}
+
+.controls input {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.loading {
+  padding: 15px;
+  text-align: center;
+  color: #6c757d;
+}
+
+.sections-container {
+  display: grid;
+  gap: 30px;
+}
+
+.agendamentos-section {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.agendamentos-section h3 {
+  margin-top: 0;
+  color: #343a40;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.empty-message {
+  color: #6c757d;
+  font-style: italic;
+  padding: 10px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.agendamento-item {
+  padding: 12px 15px;
+  margin: 8px 0;
+  background-color: white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.agendamento-item .data {
+  font-weight: bold;
+  min-width: 100px;
+  color: #495057;
+}
+
+.agendamento-item .hora {
+  color: #007bff;
+  min-width: 60px;
+  font-weight: 500;
+}
+
+.agendamento-item .especie {
+  color: #212529;
+}

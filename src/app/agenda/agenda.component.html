@@ -1,38 +1,38 @@
-
-<!-- <div id="background"><img src="imagem-fundo.png"></div> -->
 <main>
-  <div id="container">
-    <h2>Agendar Visita</h2>
+  <div id="titulo">Agendamento de Serviços</div>
 
-    <label for="data">Data:</label>
-    <input type="date" id="data"  name="data">
+  <div id="agendamentos">
+    <div *ngIf="msg" class="erro">{{msg}}</div>
 
-    <label for="hora">Hora:</label>
-    <input type="time" id="hora" name="hora">
+    <div id="container">
+      <form (submit)="agendar()">
+        <label for="data">Data:</label>
+        <input type="date" id="data" [(ngModel)]="data" name="data" required>
 
-    <label for="services">Serviço:</label>
-    <select id="services" name="services">
-      <option value="banho">Banho</option>
-      <option value="tosa">Tosa</option>
-      <option value="banho_tosa">Banho & Tosa</option>
-    </select>
-    <label for="pet">Qual o seu pet?</label>
-   <select name="pets" id="pets">
-    <option value="">Cachorro</option>
-    <option value="">Gato</option>
-    <option value="">Passaro</option>
-    <option value="">:::</option>
-   </select>
-    <button id="agenda">Agendar</button>
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" [(ngModel)]="hora" name="hora" required>
 
-    <p id="erro-msg"  style="color: red;"></p>
+        <label for="servico">Serviço:</label>
+        <select id="servico" [(ngModel)]="servico" name="servico" required>
+          <option value="">Selecione...</option>
+          <option value="Banho">Banho</option>
+          <option value="Tosa">Tosa</option>
+          <option value="Banho e Tosa">Banho e Tosa</option>
+          <option value="Consulta">Consulta</option>
+        </select>
 
-    <div id="agendamentos">
-      <h3>Agendamentos:</h3>
-      <ul id="lista-agendamentos">
-        <li>
-        </li>
-      </ul>
+        <label for="especie">Espécie:</label>
+        <select id="especie" [(ngModel)]="especie" name="especie" required>
+          <option value="">Selecione...</option>
+          <option value="Cachorro">Cachorro</option>
+          <option value="Gato">Gato</option>
+          <option value="Outro">Outro</option>
+        </select>
+
+        <button id="agenda" type="submit" [disabled]="loading">
+          {{loading ? 'Agendando...' : 'Agendar'}}
+        </button>
+      </form>
     </div>
   </div>
 </main>
