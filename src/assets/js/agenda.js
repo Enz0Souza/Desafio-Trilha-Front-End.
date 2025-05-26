@@ -25,8 +25,6 @@ console.log('Servidor iniciado. Agendamentos iniciais:', agendamentos);
 
 function authMiddleware(req, res, next) {
   const authHeader = req.headers.authorization;
-  console.log('Header de autorização recebido:', authHeader);
-
   if (!authHeader) {
     console.log('Token não fornecido');
     return res.status(401).json({ error: 'Token não fornecido' });
@@ -51,7 +49,6 @@ function authMiddleware(req, res, next) {
 
 // Rota para criar agendamento
 app.post('/api/agendamentos', authMiddleware, (req, res) => {
-  console.log('Corpo da requisição:', req.body);
   const { data, hora, especie } = req.body;
 
   if (!data || !hora || !especie) {
@@ -68,31 +65,25 @@ app.post('/api/agendamentos', authMiddleware, (req, res) => {
   };
 
   agendamentos.push(novo);
-  console.log('Novo agendamento adicionado:', novo);
   res.status(201).json(novo);
 });
 
 // Rota para buscar agendamentos
 app.get('/api/agendamentos', authMiddleware, (req, res) => {
   const { dia } = req.query;
-  console.log('Recebida requisição para dia:', dia, 'do userId:', req.userId);
 
   if (!dia) return res.status(400).json({ error: 'Parâmetro dia é obrigatório' });
 
   const dtDia = new Date(dia);
   if (isNaN(dtDia)) return res.status(400).json({ error: 'Data inválida' });
 
-  console.log('Todos agendamentos:', agendamentos);
 
   const agsUser = agendamentos.filter(a => {
-    console.log(`Comparando usuário: ${a.userId} === ${req.userId}`);
     return a.userId === req.userId;
   });
 
-  console.log('Agendamentos do usuário:', agsUser);
 
   const agsDoDia = agsUser.filter(a => a.data === dia);
-  console.log('Agendamentos do dia:', agsDoDia);
 
   const dayOfWeek = dtDia.getDay();
   const diffToSunday = dayOfWeek;

@@ -61,22 +61,5 @@ export class AgendamentoService {
         throw err;
       })
     );
-  }
-
-  testarFluxoCompleto(): void {
-    const testData = {
-      data: new Date().toISOString().split('T')[0],
-      hora: '14:00',
-      especie: 'Gato'
-    };
-
-    console.log('Iniciando teste de fluxo completo...');
-    this.criarAgendamento(testData).subscribe({
-      next: (res) => {
-        console.log('Agendamento criado com sucesso, buscando agendamentos...');
-        this.buscarAgendamentos(testData.data).subscribe();
-      },
-      error: (err) => console.error('Erro no teste de fluxo:', err)
-    });
-  }
+}
 }
