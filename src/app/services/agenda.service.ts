@@ -22,7 +22,7 @@ export interface AgendamentosResponse {
   providedIn: 'root'
 })
 export class AgendamentoService {
-  private apiUrl = 'http://localhost:3000/api/agendamentos';
+  private apiUrl = 'https://api-2hfr.onrender.com/api/agendamentos';
 
   constructor(private http: HttpClient) {
     console.log('Serviço de agendamento inicializado');
