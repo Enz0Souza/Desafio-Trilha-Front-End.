@@ -1,12 +1,20 @@
 <main>
-  <br>
+  <br />
   <form (ngSubmit)="enviarFormulario()" #formulario="ngForm">
     <h1>Fale Conosco</h1>
+
     <label for="name">Nome:</label>
     <input type="text" name="nome" ngModel required />
 
     <label for="tel">Telefone:</label>
-    <input type="text" name="telefone" ngModel required />
+    <input
+      type="text"
+      name="telefone"
+      ngModel
+      required
+      placeholder="(00) 00000-0000"
+      mask="(00) 00000-0000"
+    />
 
     <label for="opt">Motivo do Contato:</label>
     <select name="motivo" ngModel required>
@@ -27,5 +35,5 @@
 
     <button type="submit">Enviar</button>
   </form>
-  <br>
+  <br />
 </main>

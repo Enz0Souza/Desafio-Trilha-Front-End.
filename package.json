@@ -5,7 +5,6 @@
   "scripts": {
     "api": "node src/assets/js/agenda.js"
   },
-
   "private": true,
   "dependencies": {
     "@angular/common": "^19.2.0",
@@ -24,6 +23,7 @@
     "express": "^4.21.2",
     "jquery": "^3.7.1",
     "jsonwebtoken": "^9.0.2",
+    "ngx-mask": "^19.0.7",
     "ngx-owl-carousel-o": "^19.0.2",
     "rxjs": "~7.8.0",
     "swiper": "^11.2.6",
@@ -46,5 +46,4 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.7.2"
   }
-
 }
