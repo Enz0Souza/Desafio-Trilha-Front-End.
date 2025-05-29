@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:4200',
+  origin: ['https://desafio-trilha-front-end-9v9d.vercel.app', 'http://localhost:4200'],
   credentials: true
 }));
 app.use(bodyParser.json());
@@ -53,6 +53,17 @@ app.post('/api/agendamentos', authMiddleware, (req, res) => {
 
   if (!data || !hora || !especie) {
     return res.status(400).json({ error: 'Campos obrigatórios: data, hora, especie' });
+  }
+
+  // Validação da data
+  const hoje = new Date();
+  hoje.setHours(0, 0, 0, 0); // Zera as horas para comparar apenas a data
+
+  const dataAgendamento = new Date(data);
+  dataAgendamento.setHours(0, 0, 0, 0); // Zera as horas para comparar apenas a data
+
+  if (dataAgendamento < hoje) {
+    return res.status(400).json({ error: 'Não é possível agendar para datas passadas' });
   }
 
   const novo = {
@@ -110,7 +121,7 @@ app.get('/api/agendamentos', authMiddleware, (req, res) => {
   });
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`API rodando na porta ${PORT}`);
 });
